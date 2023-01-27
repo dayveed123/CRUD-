@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="style.css">
+       
+    <title>ADMINISTRATOR</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" class="postForm" name="form1">
+                        <div class="form-control">
+                           <label for="firstName">First Name</label>
+                           <input type="text" name="firstName" id="firstName" onkeydown="keyDown(event)"
+                           onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))' title="only letters allowed" >
+                           <small>Error Message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" name="lastName" id="lastName" onkeydown="keyDown(event)"
+                            onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))' title="only letters allowed"  >
+                            <small>Error Message</small>
+                         </div>
+                         <div class="form-control">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" onkeydown="keyDown(event)" >
+                            <small>Error Message</small>
+                         </div>
+
+                         <div class="form-control">
+                            <label for="userName">userName</label>
+                            <input type="text" name="userName" id="userName" onkeydown="keyDown(event)" oninput="checkUserName()">
+                            <small>Error Message</small>
+                         </div>
+                         <div class="form_action_button" id="myDIV">
+                            <input type="submit" value="Add" class="formSubmit" id="AddUp" >
+                            <input type="reset" value="reset">
+                         </div>
+                         <div>
+                            <input type="hidden" name="UserID" id="UserID" >
+                         </div>
+                         <div class="form_action_button">
+                            <button onclick="editUser()" id="SaveChanges" class="SaveChanges"> save changes </button>
+                         </div>
+                </form>
+
+                <td>
+                    <table class="list" id="costumerList">
+                        <thread>
+                            <tr>
+                                <th>firstName</th>
+                                <th>LastName</th>
+                                <th>Email</th>
+                                <th>userName</th>
+                            </tr>
+
+                        </thread>
+                        <tbody id="tbData">
+                        </tbody>
+                    </table>
+
+
+                </td>
+
+
+            </td>
+        </tr>
+    </table>
+    <script src="Crud.js"></script>
+</body>
+</html>
